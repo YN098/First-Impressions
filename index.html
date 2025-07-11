@@ -1,213 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>F1 - First Impression</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>First Impression - Gift Bags & Decor</title>
+  <style>
+    body {
+      background-color: #cbd4ca;
+      color: #4a3c31;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #dceadf; /* pastel green */
-    color: #4b3f2f; /* brown shade */
-  }
+    /* Ribbon Header Styles */
+    .ribbon-header {
+      background: #8c7b6b;
+      color: #fff;
+      padding: 12px 0;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1.1px;
+      user-select: none;
+    }
+    .ribbon-header a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 12px;
+      transition: background-color 0.3s ease;
+    }
+    .ribbon-header a:hover {
+      background-color: #6f5c4d;
+    }
 
-  /* Contact bar at top */
-  .contact-bar {
-    background-color: #f1f5f2;
-    padding: 12px 24px;
-    text-align: right;
-    font-family: 'Verdana', sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border-bottom: 1px solid #a59c8e;
-  }
-  .contact-bar a {
-    text-transform: uppercase;
-    color: #3a2e1f;
-    text-decoration: none;
-    font-weight: 700;
-    margin-left: 10px;
-  }
-  .contact-bar a:hover {
-    color: #2e5230;
-    text-decoration: underline;
-  }
+    /* Logo and gift bag */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      background-color: #bbc5b7;
+      border-bottom: 2px solid #8c7b6b;
+    }
+    .logo-text {
+      font-weight: 900;
+      font-size: 2.5rem;
+      border-bottom: 3px solid #4a3c31;
+      padding-bottom: 6px;
+      user-select: none;
+      color: #4a3c31;
+    }
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+    }
 
-  header {
-    background-color: #c9d7c5; /* lighter pastel green */
-    border-bottom: 3px solid #6d5841;
-    padding: 20px 30px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
+    /* Welcome section */
+    .welcome-section {
+      max-width: 900px;
+      margin: 30px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .welcome-section h1 {
+      font-weight: 900;
+      margin-bottom: 6px;
+      font-size: 2rem;
+    }
+    .welcome-section p {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+    .welcome-section em {
+      display: block;
+      margin-top: 10px;
+      color: #5a4e3d;
+      font-size: 1rem;
+    }
 
-  /* F1 Logo text */
-  .logo {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 900;
-    font-size: 2.8rem;
-    color: #6d5841;
-    position: relative;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  /* Racing animation - a quick sliding underline with speed effect */
-  .logo::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    height: 4px;
-    width: 100%;
-    background: linear-gradient(90deg, #6d5841 25%, #4b3f2f 50%, #6d5841 75%);
-    animation: racing 1.5s linear infinite;
-    border-radius: 2px;
-  }
-  @keyframes racing {
-    0% {background-position: 0 0;}
-    100% {background-position: 200% 0;}
-  }
-
-  /* Gift bag image next to logo */
-  .logo-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 12px;
-    object-fit: cover;
-    border: 2px solid #6d5841;
-    box-shadow: 0 0 8px #9a8c70;
-  }
-
-  main {
-    padding: 20px 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  /* Welcome section */
-  .welcome {
-    text-align: center;
-    margin-bottom: 25px;
-  }
-  .welcome h2 {
-    font-size: 2rem;
-    margin: 10px 0;
-    font-weight: 700;
-  }
-  .welcome p.description {
-    font-size: 1.1rem;
-    margin: 0 0 15px;
-  }
-  .welcome p.quote {
-    font-style: italic;
-    color: #4b3f2fcc;
-    font-weight: 600;
-  }
-
-  /* Gallery grid */
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 16px;
-    margin-top: 15px;
-  }
-  .gallery-item {
-    background: #f6f7f1;
-    border-radius: 14px;
-    box-shadow: 0 2px 6px rgba(75, 63, 47, 0.15);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-  .gallery-item:hover {
-    transform: scale(1.07);
-    box-shadow: 0 6px 20px rgba(75, 63, 47, 0.3);
-  }
-  .gallery-item img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-  }
-  .gallery-item p {
-    padding: 10px 12px;
-    font-size: 0.9rem;
-    color: #4b3f2f;
-    font-weight: 600;
-    text-align: center;
-    user-select: none;
-  }
-
-</style>
+    /* Gallery grid */
+    .gallery {
+      max-width: 1024px;
+      margin: 20px auto 50px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      background-color: #fafaf4;
+      border-radius: 14px;
+      box-shadow: 2px 2px 10px rgba(74, 60, 49, 0.15);
+      text-align: center;
+      padding-bottom: 14px;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 3px 6px 18px rgba(74, 60, 49, 0.35);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 14px 14px 0 0;
+      user-select: none;
+    }
+    .gallery-item p {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin: 12px 10px 0;
+      color: #4a3c31;
+    }
+  </style>
 </head>
 <body>
+  <!-- Ribbon Header -->
+  <nav class="ribbon-header">
+    <a href="#home">Home</a>
+    <a href="#trending">Trending</a>
+    <a href="#orders">Orders</a>
+    <a href="#cart">CART</a>
+    <a href="#account">Your Account</a>
+  </nav>
 
-<div class="contact-bar">
-  Owner: Yani
-  <a href="mailto:YN007@KUCHBHI.COM">YN007@KUCHBHI.COM</a>
-</div>
+  <!-- Logo and gift bag -->
+  <header>
+    <div class="logo-text">F1</div>
+    <img class="logo-img" src="https://cdn.pixabay.com/photo/2016/11/18/16/55/tote-1835939_1280.jpg" alt="Gift Bag beside logo" />
+  </header>
 
-<header>
-  <div class="logo" tabindex="0" title="F1 - First Impression">F1</div>
-  <img class="logo-img" src="https://i.pinimg.com/564x/5a/11/66/5a11662d7bc8c01e2dcd987f165bdc54.jpg" alt="Gift Bag beside logo" />
-</header>
-
-<main>
-  <section class="welcome">
-    <h2>Welcome to First Impression</h2>
-    <p class="description">Beautiful gift bags and decor to elevate your celebrations!</p>
-    <p class="quote">"Style is a way to say who you are without speaking." — Rachel Zoe</p>
-    <p class="quote">"Elegance is not standing out, but being remembered." — Giorgio Armani</p>
+  <!-- Welcome Section -->
+  <section class="welcome-section">
+    <h1>Welcome to First Impression</h1>
+    <p>Beautiful gift bags and decor to elevate your celebrations!</p>
+    <em>"Style is a way to say who you are without speaking." — Rachel Zoe</em>
+    <em>"Elegance is not standing out, but being remembered." — Giorgio Armani</em>
   </section>
 
+  <!-- Gallery -->
   <section class="gallery">
     <div class="gallery-item">
-      <img src="https://i.pinimg.com/564x/8f/0d/8a/8f0d8a497e6bc7ef4c3d325b3500a693.jpg" alt="Elegant gift bag with floral design" />
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Elegant gift bag with floral design" />
       <p>Elegant gift bag with floral design</p>
     </div>
     <div class="gallery-item">
-      <img src="https://i.pinimg.com/564x/50/19/ae/5019ae81c3a4ecb18fdfd77ee54a128f.jpg" alt="Brown kraft paper gift bag" />
+      <img src="https://cdn.pixabay.com/photo/2017/06/19/19/19/paper-bags-2425077_1280.jpg" alt="Brown kraft paper gift bag" />
       <p>Brown kraft paper gift bag</p>
     </div>
     <div class="gallery-item">
-      <img src="https://i.pinimg.com/564x/42/cc/bb/42ccbb3e0e7e4f70e713ccf82107c6b3.jpg" alt="Green pastel gift bag with ribbon" />
+      <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=400&q=80" alt="Green pastel gift bag with ribbon" />
       <p>Green pastel gift bag with ribbon</p>
     </div>
     <div class="gallery-item">
-      <img src="https://i.pinimg.com/564x/4d/8c/31/4d8c318d1f7883268da42a2ec6e79486.jpg" alt="TV series inspired coffee mug" />
+      <img src="https://images.unsplash.com/photo-1567016526492-c89b2dba56ae?auto=format&fit=crop&w=400&q=80" alt="TV series inspired coffee mug" />
       <p>TV series inspired coffee mug</p>
     </div>
     <div class="gallery-item">
-      <img src="https://i.pinimg.com/564x/d7/2b/23/d72b2374e0aa87a5ee9ce24c4b823fbc.jpg" alt="Tote bag with TV show quote" />
+      <img src="https://cdn.pixabay.com/photo/2016/11/18/16/55/tote-1835939_1280.jpg" alt="Tote bag with TV show quote" />
       <p>Tote bag with TV show quote</p>
     </div>
     <div class="gallery-item">
-      <img src="https://i.pinimg.com/564x/fd/59/13/fd5913d837fd9e8a5d044f4a4d7165f6.jpg" alt="Brown paper gift bag with flowers" />
+      <img src="https://cdn.pixabay.com/photo/2017/07/20/18/01/bag-2522507_1280.jpg" alt="Brown paper gift bag with flowers" />
       <p>Brown paper gift bag with flowers</p>
     </div>
     <div class="gallery-item">
-      <img src="https://i.pinimg.com/564x/3a/34/8a/3a348a64c185c1bfa469c7138a04a4b6.jpg" alt="TV series inspired mug with graphics" />
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="TV series inspired mug with graphics" />
       <p>TV series inspired mug with graphics</p>
     </div>
     <div class="gallery-item">
-      <img src="https://i.pinimg.com/564x/41/f2/eb/41f2ebc59475e0e6682e52a2d9efcfa1.jpg" alt="Green pastel tote bag" />
+      <img src="https://cdn.pixabay.com/photo/2017/08/06/00/41/shopping-bag-2582623_1280.jpg" alt="Green pastel tote bag" />
       <p>Green pastel tote bag</p>
     </div>
     <div class="gallery-item">
-      <img src="https://i.pinimg.com/564x/f4/33/cc/f433cc27cc4e3bb90072db6cdca7da55.jpg" alt="Rustic gift bag with twine" />
+      <img src="https://cdn.pixabay.com/photo/2018/10/22/16/18/gift-bag-3767095_1280.jpg" alt="Rustic gift bag with twine" />
       <p>Rustic gift bag with twine</p>
     </div>
     <div class="gallery-item">
-      <img src="https://i.pinimg.com/564x/ea/eb/0d/eaeb0d40455ed0ec7a2b35e33a059172.jpg" alt="TV series inspired mug with typography" />
+      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="TV series inspired mug with typography" />
       <p>TV series inspired mug with typography</p>
     </div>
   </section>
-</main>
-
 </body>
 </html>
