@@ -1,119 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>First Impression - Gift Bags & Decor</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff9f5;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>First Impression - Gift Bags & Decor</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f9f6; /* very light pastel green */
+    color: #4b3b2b; /* pastel brown */
+    margin: 0;
+    padding: 0 1rem;
+  }
+
+  header {
+    background-color: #d0e6d2; /* pastel green */
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-bottom: 3px solid #b3a380; /* pastel brown */
+  }
+
+  /* F1 Logo styling */
+  .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    color: #6b5b3b;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  /* Interactive hover effect for logo */
+  .logo:hover {
+    color: #9caf88; /* lighter pastel green */
+    transform: scale(1.2) rotate(5deg);
+    text-shadow: 0 0 10px #9caf88, 0 0 20px #9caf88;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+
+  p.tagline {
+    font-size: 1.2rem;
+    margin-top: 0.3rem;
+  }
+
+  main {
+    max-width: 960px;
+    margin: 2rem auto;
+  }
+
+  section.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  section.gallery img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(107, 91, 59, 0.3);
+    transition: transform 0.3s ease;
+  }
+
+  section.gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  footer {
+    background-color: #e7f0e8; /* lighter pastel green */
+    color: #4b3b2b;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;
+    border-top: 2px solid #b3a380;
+  }
+
+  footer h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  footer p {
+    margin: 0.3rem 0;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2rem;
     }
-    header {
-      background-color: #e91e63;
-      color: white;
-      padding: 15px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    section.gallery img {
+      height: 120px;
     }
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-    nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .hero {
-      padding: 60px 30px;
-      background-image: linear-gradient(45deg, #ffe4ec, #fff5f8);
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-      color: #e91e63;
-    }
-    .hero p {
-      font-size: 18px;
-      color: #444;
-    }
-    .products {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      padding: 40px 20px;
-    }
-    .product {
-      background-color: white;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      padding: 20px;
-      width: 250px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-    .product img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-    .product h3 {
-      margin: 10px 0 5px;
-      font-size: 20px;
-    }
-    .product p {
-      color: #555;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #f3f3f3;
-      color: #888;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">F1</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Shop</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo" title="First Impression Logo">F1</div>
+  <h1>Welcome to First Impression</h1>
+  <p class="tagline">Beautiful gift bags and decor to elevate your celebrations!</p>
+</header>
 
-  <section class="hero">
-    <h1>Welcome to First Impression</h1>
-    <p>Beautiful gift bags and decor to elevate your celebrations!</p>
+<main>
+  <section class="gallery" aria-label="Gallery of gift bags, mugs, and tote bags">
+    <!-- Sample images: Replace URLs with your downloaded images -->
+    <img src="https://i.pinimg.com/564x/6f/4d/53/6f4d53a0f311bda0bc2ab2e6189c602e.jpg" alt="Elegant gift bag with floral design" />
+    <img src="https://i.pinimg.com/564x/f0/c1/b9/f0c1b91d6e0b4a9f9c236020bdf2ed9a.jpg" alt="Brown kraft paper gift bag" />
+    <img src="https://i.pinimg.com/564x/58/f0/60/58f0605f28b6fa89a4632bb87f7f2a5a.jpg" alt="Green pastel gift bag with ribbon" />
+    <img src="https://i.pinimg.com/564x/45/60/2c/45602cefeeb0a92d452e446bd7b3a5b2.jpg" alt="TV series inspired coffee mug" />
+    <img src="https://i.pinimg.com/564x/93/28/d7/9328d7f9b2a05d4a9df0f8a1a576f1a2.jpg" alt="Tote bag with TV show quote" />
+    <img src="https://i.pinimg.com/564x/74/6e/f1/746ef1f9e7553e239eb7b85c263d91ca.jpg" alt="Brown paper gift bag with flowers" />
+    <img src="https://i.pinimg.com/564x/8f/3d/d4/8f3dd4ff67f5e5367e2a4f7f85eb4b55.jpg" alt="TV series inspired mug with graphics" />
+    <img src="https://i.pinimg.com/564x/c4/39/af/c439af65fa7d88f9e1644b96bc31f62d.jpg" alt="Green pastel tote bag" />
+    <img src="https://i.pinimg.com/564x/22/54/6a/22546adf42c8bbf9f6ed86a2aa9a0b72.jpg" alt="Rustic gift bag with twine" />
+    <img src="https://i.pinimg.com/564x/7f/1a/cd/7f1acd293dc9f098c622ba24c6a1b9b3.jpg" alt="TV series inspired mug with typography" />
   </section>
+</main>
 
-  <section class="products">
-    <div class="product">
-      <img src="https://via.placeholder.com/250x180.png?text=Gift+Bag+1" alt="Gift Bag 1">
-      <h3>Floral Gift Bag</h3>
-      <p>$5.99</p>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/250x180.png?text=Decor+Set" alt="Decor Set">
-      <h3>Pastel Decor Set</h3>
-      <p>$12.49</p>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/250x180.png?text=Luxury+Bag" alt="Luxury Bag">
-      <h3>Luxury Gift Bag</h3>
-      <p>$9.99</p>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 First Impression. All rights reserved.
-  </footer>
+<footer>
+  <h2>Contact Us</h2>
+  <p>Name: Yani</p>
+  <p>Email: <a href="mailto:yn007@kuchbhi.com">yn007@kuchbhi.com</a></p>
+</footer>
 </body>
 </html>
