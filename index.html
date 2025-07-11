@@ -3,133 +3,122 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>First Impression - Gift Bags & Decor</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+<title>First Impression</title>
 <style>
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f7f9f6; /* very light pastel green */
-    color: #4b3b2b; /* pastel brown */
+    background-color: #d9e6d2; /* pastel green */
+    color: #5a4b3c; /* brown shade */
     margin: 0;
-    padding: 0 1rem;
+    padding: 0;
   }
-
   header {
-    background-color: #d0e6d2; /* pastel green */
-    padding: 1.5rem 1rem;
-    text-align: center;
-    border-bottom: 3px solid #b3a380; /* pastel brown */
+    background-color: #c1d9b8; /* lighter pastel green */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
   }
-
-  /* F1 Logo styling */
-  .logo {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 4rem;
-    color: #6b5b3b;
-    margin-bottom: 0.3rem;
-    cursor: pointer;
-    user-select: none;
-    display: inline-block;
-    transition: transform 0.3s ease, color 0.3s ease;
+  header img.logo {
+    height: 50px;
   }
-
-  /* Interactive hover effect for logo */
-  .logo:hover {
-    color: #9caf88; /* lighter pastel green */
-    transform: scale(1.2) rotate(5deg);
-    text-shadow: 0 0 10px #9caf88, 0 0 20px #9caf88;
+  header img.small-bag {
+    height: 40px;
+    border-radius: 5px;
   }
-
-  header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+  nav.contact {
+    background-color: #b3cba6;
+    padding: 12px 20px;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 14px;
+    color: #3b2e20;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    align-items: center;
   }
-
-  p.tagline {
-    font-size: 1.2rem;
-    margin-top: 0.3rem;
+  nav.contact a {
+    color: #3b2e20;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1.5px;
   }
-
+  nav.contact a:hover {
+    text-decoration: underline;
+  }
   main {
-    max-width: 960px;
-    margin: 2rem auto;
+    text-align: center;
+    padding: 30px 15px 15px;
   }
-
-  section.gallery {
+  main h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+  main p.description {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  main p.quotes {
+    font-size: 14px;
+    font-style: italic;
+    max-width: 600px;
+    margin: 10px auto 30px;
+    color: #4a3f30;
+  }
+  .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1rem;
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto 40px;
   }
-
-  section.gallery img {
+  .gallery img {
     width: 100%;
     height: 140px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(107, 91, 59, 0.3);
-    transition: transform 0.3s ease;
-  }
-
-  section.gallery img:hover {
-    transform: scale(1.05);
-  }
-
-  footer {
-    background-color: #e7f0e8; /* lighter pastel green */
-    color: #4b3b2b;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    margin-top: 3rem;
-    border-top: 2px solid #b3a380;
-  }
-
-  footer h2 {
-    margin-bottom: 0.5rem;
-  }
-
-  footer p {
-    margin: 0.3rem 0;
-  }
-
-  /* Responsive tweaks */
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 2rem;
-    }
-    section.gallery img {
-      height: 120px;
-    }
+    box-shadow: 1px 1px 6px rgba(0,0,0,0.1);
   }
 </style>
 </head>
 <body>
+
+<nav class="contact">
+  <div>Owner: Yani</div>
+  <a href="mailto:YN007@KUCHBHI.COM">YN007@KUCHBHI.COM</a>
+</nav>
+
 <header>
-  <div class="logo" title="First Impression Logo">F1</div>
-  <h1>Welcome to First Impression</h1>
-  <p class="tagline">Beautiful gift bags and decor to elevate your celebrations!</p>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/F1_logo.svg/1024px-F1_logo.svg.png" alt="F1 Logo" class="logo" />
+  <img src="https://i.pinimg.com/564x/6f/47/9a/6f479a681dc7e87d6677e284e03e8126.jpg" alt="Small Gift Bag" class="small-bag" />
 </header>
 
 <main>
-  <section class="gallery" aria-label="Gallery of gift bags, mugs, and tote bags">
-    <!-- Sample images: Replace URLs with your downloaded images -->
-    <img src="https://i.pinimg.com/564x/6f/4d/53/6f4d53a0f311bda0bc2ab2e6189c602e.jpg" alt="Elegant gift bag with floral design" />
-    <img src="https://i.pinimg.com/564x/f0/c1/b9/f0c1b91d6e0b4a9f9c236020bdf2ed9a.jpg" alt="Brown kraft paper gift bag" />
-    <img src="https://i.pinimg.com/564x/58/f0/60/58f0605f28b6fa89a4632bb87f7f2a5a.jpg" alt="Green pastel gift bag with ribbon" />
-    <img src="https://i.pinimg.com/564x/45/60/2c/45602cefeeb0a92d452e446bd7b3a5b2.jpg" alt="TV series inspired coffee mug" />
-    <img src="https://i.pinimg.com/564x/93/28/d7/9328d7f9b2a05d4a9df0f8a1a576f1a2.jpg" alt="Tote bag with TV show quote" />
-    <img src="https://i.pinimg.com/564x/74/6e/f1/746ef1f9e7553e239eb7b85c263d91ca.jpg" alt="Brown paper gift bag with flowers" />
-    <img src="https://i.pinimg.com/564x/8f/3d/d4/8f3dd4ff67f5e5367e2a4f7f85eb4b55.jpg" alt="TV series inspired mug with graphics" />
-    <img src="https://i.pinimg.com/564x/c4/39/af/c439af65fa7d88f9e1644b96bc31f62d.jpg" alt="Green pastel tote bag" />
-    <img src="https://i.pinimg.com/564x/22/54/6a/22546adf42c8bbf9f6ed86a2aa9a0b72.jpg" alt="Rustic gift bag with twine" />
-    <img src="https://i.pinimg.com/564x/7f/1a/cd/7f1acd293dc9f098c622ba24c6a1b9b3.jpg" alt="TV series inspired mug with typography" />
+  <h1>Welcome to First Impression</h1>
+  <p class="description">Beautiful gift bags and decor to elevate your celebrations!</p>
+  <p class="quotes">
+    “Fashion is the armor to survive the reality of everyday life.” — Bill Cunningham<br>
+    “Style is a way to say who you are without having to speak.” — Rachel Zoe<br>
+    “Elegance is the only beauty that never fades.” — Audrey Hepburn
+  </p>
+
+  <section class="gallery">
+    <!-- Gifting Bags -->
+    <img src="https://i.pinimg.com/564x/60/2c/8e/602c8e27a5572d05a2b4dfb2c20a6729.jpg" alt="Elegant gift bag with floral design" />
+    <img src="https://i.pinimg.com/564x/f9/45/b3/f945b3f04e37f20b51b1b616f0d9da4f.jpg" alt="Brown kraft paper gift bag" />
+    <img src="https://i.pinimg.com/564x/6f/47/9a/6f479a681dc7e87d6677e284e03e8126.jpg" alt="Green pastel gift bag with ribbon" />
+    <img src="https://i.pinimg.com/564x/9c/ed/5b/9ced5b2bf084b81bdf6e18289983ff1e.jpg" alt="Small gift bag with twine" />
+    <img src="https://i.pinimg.com/564x/37/55/6f/37556f91f86d2f276c1f49e933dc6459.jpg" alt="Rustic gift bag with twine" />
+
+    <!-- Mugs -->
+    <img src="https://i.pinimg.com/564x/50/d0/b4/50d0b4d582dbf34a39958282f3cccb17.jpg" alt="Handmade mug" />
+    <img src="https://i.pinimg.com/564x/f2/61/d2/f261d2526cceaf343943af82a061e7a3.jpg" alt="Pink flower mug" />
+    <img src="https://i.pinimg.com/564x/ea/d0/d1/ead0d1ac09f91b8a3d94998226f4146f.jpg" alt="TV series inspired coffee mug" />
+    <img src="https://i.pinimg.com/564x/10/7f/21/107f2185c61a6e74b7eaa9a08b796f1a.jpg" alt="TV series inspired mug with typography" />
+    <img src="https://i.pinimg.com/564x/0b/0d/8e/0b0d8e17bde9aaea2b802e78db4106a3.jpg" alt="Coffee mug with graphics" />
   </section>
 </main>
 
-<footer>
-  <h2>Contact Us</h2>
-  <p>Name: Yani</p>
-  <p>Email: <a href="mailto:yn007@kuchbhi.com">yn007@kuchbhi.com</a></p>
-</footer>
 </body>
 </html>
