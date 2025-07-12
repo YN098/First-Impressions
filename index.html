@@ -5,283 +5,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>First Impression - Sarees, Suits & Gift Bags</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #d4dbd1;
-      color: #4b4237;
-    }
-
-    #welcome {
-      text-align: center;
-      font-weight: 700;
-      font-size: 2rem;
-      padding: 20px 10px 10px;
-      user-select: none;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      padding: 12px 24px;
-      border-bottom: 2px solid #7c6f5c;
-      gap: 12px;
-      user-select: none;
-      background: #c9d2c7;
-    }
-
-    .logo-text {
-      font-weight: 900;
-      font-size: 2.5rem;
-      letter-spacing: -1.5px;
-      border-bottom: 4px solid #4b4237;
-      padding-bottom: 4px;
-      font-family: 'Georgia', serif;
-      color: #4b4237;
-    }
-
-    .logo-img {
-      width: 55px;
-      height: 55px;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    nav {
-      background: linear-gradient(90deg, #6f6050, #8a7a66);
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      padding: 12px 0;
-      font-weight: 600;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #f0ece6;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-      user-select: none;
-      position: sticky;
-      top: 80px;
-      z-index: 100;
-    }
-
-    nav a {
-      color: #f0ece6;
-      text-decoration: none;
-      padding: 6px 12px;
-      border-radius: 12px;
-      transition: background-color 0.3s ease;
-    }
-
-    nav a:hover,
-    nav a:focus {
-      background-color: #a9947d;
-      outline: none;
-      cursor: pointer;
-    }
-
-    .user-details {
-      position: fixed;
-      top: 8px;
-      right: 16px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #4b4237;
-      font-family: 'Arial', sans-serif;
-      user-select: none;
-      z-index: 110;
-      background: rgba(255, 255, 255, 0.7);
-      padding: 4px 8px;
-      border-radius: 8px;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 22px;
-      padding: 24px 0;
-    }
-
-    main {
-      padding: 40px 20px 80px;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .product-card {
-      background-color: #fafaf4;
-      border-radius: 14px;
-      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 16px rgb(0 0 0 / 0.15);
-    }
-
-    .product-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-bottom: 1px solid #ddd;
-      border-radius: 14px 14px 0 0;
-    }
-
-    .product-info {
-      padding: 12px 16px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .product-name {
-      font-weight: 700;
-      font-size: 1rem;
-      margin-bottom: 8px;
-    }
-
-    .product-price {
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: #6a4e42;
-      font-family: 'Courier New', Courier, monospace;
-      margin-bottom: 10px;
-    }
-
-    .add-cart-btn {
-      background-color: #6f6050;
-      color: #f0ece6;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .add-cart-btn:hover {
-      background-color: #8a7a66;
-    }
-
-    #cart {
-      position: fixed;
-      top: 130px;
-      right: 12px;
-      width: 320px;
-      max-height: 70vh;
-      background: #fafaf4;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgb(0 0 0 / 0.25);
-      overflow-y: auto;
-      padding: 16px;
-      display: none;
-      z-index: 200;
-    }
-
-    #cart h2 {
-      margin-top: 0;
-      font-weight: 700;
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-      font-size: 0.95rem;
-    }
-
-    .cart-item span {
-      font-weight: 600;
-    }
-
-    .cart-total {
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-top: 1px solid #7c6f5c;
-      padding-top: 10px;
-    }
-
-    .empty-cart {
-      font-style: italic;
-      color: #857661;
-    }
-
-    #quotes {
-      margin-top: 60px;
-      font-style: italic;
-      font-weight: 600;
-      color: #5a5247;
-      font-size: 1rem;
-    }
-
-    #submenu-container {
-      position: absolute;
-      top: calc(80px + 48px);
-      left: 30%;
-      background: #c9d2c7;
-      padding: 8px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-      display: none;
-      z-index: 150;
-    }
-
-    #submenu-container button {
-      margin: 4px;
-      padding: 6px 12px;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-      background: #7c6f5c;
-      color: #fff;
-      border-radius: 8px;
-    }
-
-    #submenu-container button:hover {
-      background: #8a7a66;
-    }
-
-    @media (max-width: 700px) {
-      nav {
-        gap: 20px;
-        font-size: 0.9rem;
-      }
-
-      #cart {
-        width: 90vw;
-        max-height: 50vh;
-        top: 180px;
-        right: 5vw;
-      }
-    }
+    /* Full CSS styles as in previous examples */
+    body { margin:0; font-family:'Segoe UI', sans-serif; background:#d4dbd1; color:#4b4237; }
+    #welcome { text-align:center; font-weight:700; font-size:2rem; padding:20px 0 10px; }
+    header { display:flex; align-items:center; padding:12px 24px; background:#c9d2c7; border-bottom:2px solid #7c6f5c; }
+    .logo-text { font-weight:900; font-size:2.5rem; border-bottom:4px solid #4b4237; font-family:Georgia, serif; }
+    .logo-img { width:55px; height:55px; border-radius:12px; object-fit:cover; }
+    nav { background:linear-gradient(90deg,#6f6050,#8a7a66); display:flex; justify-content:center; gap:40px;
+          padding:12px 0; font-weight:600; color:#f0ece6; text-transform:uppercase; position:sticky; top:80px; z-index:100; }
+    nav a { padding:6px 12px; text-decoration:none; color:#f0ece6; border-radius:12px; transition:background .3s; }
+    nav a:hover { background:#a9947d; }
+    .user-details { position:fixed; top:8px; right:16px; padding:4px 8px; background:rgba(255,255,255,0.7);
+                    border-radius:8px; font-weight:600; z-index:110; }
+    #submenu-container { position:absolute; top:calc(80px + 48px); left:calc(50% - 100px); background:#c9d2c7;
+                         padding:8px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.25); display:none; z-index:150; }
+    #submenu-container button { margin:4px; padding:6px 12px; background:#7c6f5c; color:#fff; border:none; border-radius:8px; cursor:pointer; }
+    #submenu-container button:hover { background:#8a7a66; }
+    main { padding:40px 20px 80px; max-width:1200px; margin:0 auto; text-align:center; }
+    .products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:22px; }
+    .product-card { background:#fafaf4; border-radius:14px; box-shadow:0 4px 8px rgba(0,0,0,0.1);
+                    display:flex; flex-direction:column; overflow:hidden; transition:transform .3s ease; cursor:pointer; }
+    .product-card:hover { transform:translateY(-6px); }
+    .product-card img { width:100%; height:180px; object-fit:cover; }
+    .product-info { padding:12px 16px; flex-grow:1; display:flex; flex-direction:column; justify-content:space-between; }
+    .product-name { font-weight:700; margin-bottom:8px; }
+    .product-price { font-weight:700; color:#6a4e42; margin-bottom:10px; font-family:'Courier New', monospace; }
+    .add-cart-btn { background:#6f6050; color:#f0ece6; border:none; padding:8px 12px; border-radius:8px; font-weight:600; cursor:pointer; }
+    .add-cart-btn:hover { background:#8a7a66; }
+    #cart { position:fixed; top:130px; right:12px; width:320px; max-height:70vh; background:#fafaf4; padding:16px;
+            border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.25); overflow-y:auto; display:none; z-index:200; }
+    #cart h2 { margin-top:0; }
+    .cart-item { display:flex; justify-content:space-between; margin-bottom:10px; font-size:.95rem; }
+    .cart-total { font-weight:700; border-top:1px solid #7c6f5c; padding-top:10px; }
+    .empty-cart { font-style:italic; color:#857661; }
+    #quotes { margin-top:60px; font-style:italic; color:#5a5247; }
+    @media(max-width:700px){ nav { gap:20px; } #cart { width:90vw; right:5vw; }}
   </style>
 </head>
 <body>
+  <div class="user-details">Loading user...</div>
+  <div id="welcome">First Impression welcomes you!</div>
+  <header>
+    <div class="logo-text">F1</div>
+    <img class="logo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlzfOsaAslwQXmN3u1JLhAYN2BVoazDd-wVA&s" alt="Logo">
+  </header>
+  <nav>
+    <a href="#" id="nav-home">Home</a>
+    <a href="#" id="nav-trending">Trending ▾</a>
+    <a href="#" id="nav-orders">Orders</a>
+    <a href="#" id="nav-cart">Cart</a>
+    <a href="#" id="nav-account">Your Account</a>
+  </nav>
 
-<div class="user-details" aria-label="User details">Loading user...</div>
+  <div id="submenu-container">
+    <button data-category="gifting">Gifting Bags</button>
+    <button data-category="sarees">Sarees & Suits</button>
+  </div>
 
-<div id="welcome">First Impression welcomes you!</div>
+  <main aria-live="polite">
+    <section class="products-grid" id="product-list"></section>
+    <div id="quotes">
+      "Style is a way to say who you are without speaking." — Rachel Zoe<br>
+      "Elegance is not standing out, but being remembered." — Giorgio Armani
+    </div>
+  </main>
 
-<header>
-  <div class="logo-text">F1</div>
-  <img class="logo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlzfOsaAslwQXmN3u1JLhAYN2BVoazDd-wVA&s" alt="Gift Bag beside logo" />
-</header>
+  <section id="cart" role="region">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div class="cart-total" id="cart-total"></div>
+  </section>
 
-<nav>
-  <a href="#" id="nav-home">Home</a>
-  <a href="#" id="nav-trending">Trending</a>
-  <a href="#" id="nav-orders">Orders</a>
-  <a href="#" id="nav-cart">Cart</a>
-  <a href="#" id="nav-account">Your Account</a>
-</nav>
+  <script>
+    // -- LOGIN LOGIC --
+    window.addEventListener("DOMContentLoaded", () => {
+      const userEl = document.querySelector(".user-details");
+      let name = localStorage.getItem("userName");
+      let email = localStorage.getItem("userEmail");
 
-<div id="submenu-container">
-  <button onclick="filterCategory('gifting')">Gifting Bags</button>
-  <button onclick
+      if (!name || !email) {
+        name = prompt("Enter your name:") || "Guest";
+        email = prompt("Enter your email:") || "guest@example.com";
+        localStorage.setItem("userName", name);
+        localStorage.setItem("userEmail", email);
+      }
+      userEl.innerHTML = `${name} <span>${email}</span>`;
+    });
+
+    // -- PRODUCT DATA --
+    const allProducts = [
+      {id:1, category:'gifting', name:'Elegant Floral Gift Bag', price:430, img:'https://i.pinimg.com/564x/94/6d/11/946d113897be678aad6af1520a9a2a53.jpg'},
+      {id:2, category:'gifting', name:'Brown Kraft Gift Bag', price:400, img:'https://i.pinimg.com/564x/40/70/b6/4070b63ac7a61cd84685a3f1e801bd65.jpg'},
+      {id:3, category:'gifting', name:'Ribbon Handle Gift Bag', price:350, img:'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=400&q=80'},
+      {id:4, category:'sarees', name:'Silk Saree — Maroon', price:2200, img:'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80'},
+      {id:5, category:'sarees', name:'Cotton Suit Set — Floral', price:1800, img:'https://images.unsplash.com/photo-1514516870923-aebcb3f8758a?auto=format&fit=crop&w=400&q=80'},
+      {id:6, category:'sarees', name:'Designer Anarkali Suit', price:2500, img:'https://images.unsplash.com/photo-1520975698513-b8a3719b7397?auto=format&fit=crop&w=400&q=80'}
+    ];
+
+    let cart = {}, currentFilter = '';
+
+    const productListEl = document.getElementById('product-list');
+    const cartEl = document.getElementById('cart');
+    const cartItemsEl = document.getElementById('cart-items');
+    const cartTotalEl = document.getElementById('cart-total');
+    const submenu = document.getElementById('submenu-container');
+
+    // -- RENDER PRODUCTS --
+    function renderProducts() {
+      productListEl.innerHTML = '';
+      if (!currentFilter) return;
+      allProducts.filter(p => p.category === currentFilter).forEach(prod => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <img src="${prod.img}" alt="${prod.name}">
+          <div class="product-info">
+            <div class="product-name">${prod.name}</div>
+            <div class="product-price">₹${prod.price} INR</div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>`;
+        card.querySelector('.add-cart-btn').onclick = () => addToCart(prod.id);
+        productListEl.appendChild(card);
+      });
+    }
+
+    // -- ADD TO CART --
+    function addToCart(id) {
+      const prod = allProducts.find(p => p.id === id);
+      cart[id] ? cart[id].quantity++ : cart[id] = {...prod, quantity:1};
+      updateCartUI();
+      alert(`Added to cart: ${prod.name}`);
+    }
+
+    // -- UPDATE CART UI --
+    function updateCartUI() {
+      cartItemsEl.innerHTML = '';
+      const items = Object.values(cart);
+      if (!items.length) {
+        cartItemsEl.innerHTML = '<p class="empty-cart">Your cart is empty.</p>';
+        cartTotalEl.textContent = '';
+        return;
+      }
+      let total = 0;
+      items.forEach(item => {
+        total += item.price * item.quantity;
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `<span>${item.name} × ${item.quantity}</span><span>₹${item.price*item.quantity}</span>`;
+        cartItemsEl.appendChild(div);
+      });
+      cartTotalEl.textContent = `Total: ₹${total} INR`;
+    }
+
+    // -- TRENDING & SUBMENU HANDLING --
+    document.getElementById('nav-trending').onclick = e => {
+      e.preventDefault();
+      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      // if no category selected yet, default to gifting
+      if (!currentFilter) {
+        currentFilter = 'gifting';
+        renderProducts();
+      }
+    };
+
+    submenu.querySelectorAll('button').forEach(btn => {
+      btn.onclick = () => {
+        currentFilter = btn.dataset.category;
+        submenu.style.display = 'none';
+        renderProducts();
+      };
+    });
+
+    // -- CART TOGGLE --
+    document.getElementById('nav-cart').onclick = e => {
+      e.preventDefault();
+      cartEl.style.display = cartEl.style.display === 'block' ? 'none' : 'block';
+      if (cartEl.style.display === 'block') updateCartUI();
+    };
+
+    // -- CLOSE DROPDOWNS WHEN CLICKING OUTSIDE --
+    document.addEventListener('click', e => {
+      if (!submenu.contains(e.target) && e.target.id !== 'nav-trending') submenu.style.display = 'none';
+      if (!cartEl.contains(e.target) && e.target.id !== 'nav-cart') cartEl.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
