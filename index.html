@@ -2,192 +2,274 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>First Impression - Sarees, Suits & Gift Bags</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>First Impression | Sarees & Gift Bags</title>
   <style>
-    /* Full CSS styles as in previous examples */
-    body { margin:0; font-family:'Segoe UI', sans-serif; background:#d4dbd1; color:#4b4237; }
-    #welcome { text-align:center; font-weight:700; font-size:2rem; padding:20px 0 10px; }
-    header { display:flex; align-items:center; padding:12px 24px; background:#c9d2c7; border-bottom:2px solid #7c6f5c; }
-    .logo-text { font-weight:900; font-size:2.5rem; border-bottom:4px solid #4b4237; font-family:Georgia, serif; }
-    .logo-img { width:55px; height:55px; border-radius:12px; object-fit:cover; }
-    nav { background:linear-gradient(90deg,#6f6050,#8a7a66); display:flex; justify-content:center; gap:40px;
-          padding:12px 0; font-weight:600; color:#f0ece6; text-transform:uppercase; position:sticky; top:80px; z-index:100; }
-    nav a { padding:6px 12px; text-decoration:none; color:#f0ece6; border-radius:12px; transition:background .3s; }
-    nav a:hover { background:#a9947d; }
-    .user-details { position:fixed; top:8px; right:16px; padding:4px 8px; background:rgba(255,255,255,0.7);
-                    border-radius:8px; font-weight:600; z-index:110; }
-    #submenu-container { position:absolute; top:calc(80px + 48px); left:calc(50% - 100px); background:#c9d2c7;
-                         padding:8px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.25); display:none; z-index:150; }
-    #submenu-container button { margin:4px; padding:6px 12px; background:#7c6f5c; color:#fff; border:none; border-radius:8px; cursor:pointer; }
-    #submenu-container button:hover { background:#8a7a66; }
-    main { padding:40px 20px 80px; max-width:1200px; margin:0 auto; text-align:center; }
-    .products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:22px; }
-    .product-card { background:#fafaf4; border-radius:14px; box-shadow:0 4px 8px rgba(0,0,0,0.1);
-                    display:flex; flex-direction:column; overflow:hidden; transition:transform .3s ease; cursor:pointer; }
-    .product-card:hover { transform:translateY(-6px); }
-    .product-card img { width:100%; height:180px; object-fit:cover; }
-    .product-info { padding:12px 16px; flex-grow:1; display:flex; flex-direction:column; justify-content:space-between; }
-    .product-name { font-weight:700; margin-bottom:8px; }
-    .product-price { font-weight:700; color:#6a4e42; margin-bottom:10px; font-family:'Courier New', monospace; }
-    .add-cart-btn { background:#6f6050; color:#f0ece6; border:none; padding:8px 12px; border-radius:8px; font-weight:600; cursor:pointer; }
-    .add-cart-btn:hover { background:#8a7a66; }
-    #cart { position:fixed; top:130px; right:12px; width:320px; max-height:70vh; background:#fafaf4; padding:16px;
-            border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.25); overflow-y:auto; display:none; z-index:200; }
-    #cart h2 { margin-top:0; }
-    .cart-item { display:flex; justify-content:space-between; margin-bottom:10px; font-size:.95rem; }
-    .cart-total { font-weight:700; border-top:1px solid #7c6f5c; padding-top:10px; }
-    .empty-cart { font-style:italic; color:#857661; }
-    #quotes { margin-top:60px; font-style:italic; color:#5a5247; }
-    @media(max-width:700px){ nav { gap:20px; } #cart { width:90vw; right:5vw; }}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f3f3ef;
+      color: #3a3a3a;
+    }
+    header {
+      background: #fff;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #5d4037;
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #5d4037;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #8d6e63;
+    }
+    .user-login {
+      font-size: 0.9rem;
+      color: #5d4037;
+      background: #f0eae2;
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+
+    /* Hero */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1610563166153-17c816b0dfb1') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0 0 10px;
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 15px;
+      flex-grow: 1;
+    }
+    .product-name {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    .product-price {
+      color: #6a4e42;
+      font-weight: 600;
+      font-family: monospace;
+      margin-bottom: 10px;
+    }
+    .add-to-cart {
+      background: #5d4037;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Trending Section */
+    .trending-options {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .trending-options button {
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: none;
+      background: #8d6e63;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eee;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
-  <div class="user-details">Loading user...</div>
-  <div id="welcome">First Impression welcomes you!</div>
-  <header>
-    <div class="logo-text">F1</div>
-    <img class="logo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlzfOsaAslwQXmN3u1JLhAYN2BVoazDd-wVA&s" alt="Logo">
-  </header>
+
+<header>
+  <div class="logo">First Impression</div>
   <nav>
-    <a href="#" id="nav-home">Home</a>
-    <a href="#" id="nav-trending">Trending ▾</a>
-    <a href="#" id="nav-orders">Orders</a>
-    <a href="#" id="nav-cart">Cart</a>
-    <a href="#" id="nav-account">Your Account</a>
+    <a href="#" onclick="showHome()">Home</a>
+    <a href="#" onclick="showTrending()">Trending</a>
+    <a href="#" onclick="alert('Order history coming soon!')">Orders</a>
+    <a href="#" onclick="toggleCart()">Cart</a>
+    <a href="#" onclick="alert('Login & signup under development')">Your Account</a>
   </nav>
+  <div class="user-login" id="user-info">Guest</div>
+</header>
 
-  <div id="submenu-container">
-    <button data-category="gifting">Gifting Bags</button>
-    <button data-category="sarees">Sarees & Suits</button>
+<div class="hero">
+  <h1>Welcome to First Impression</h1>
+  <p>Premium Sarees, Suits & Gifting Bags for Every Occasion</p>
+</div>
+
+<section class="section" id="home-section">
+  <h2>Featured Products</h2>
+  <div class="product-grid" id="product-grid">
+    <!-- Products loaded by JS -->
   </div>
+</section>
 
-  <main aria-live="polite">
-    <section class="products-grid" id="product-list"></section>
-    <div id="quotes">
-      "Style is a way to say who you are without speaking." — Rachel Zoe<br>
-      "Elegance is not standing out, but being remembered." — Giorgio Armani
-    </div>
-  </main>
+<section class="section" id="trending-section" style="display: none;">
+  <h2>What's Trending</h2>
+  <div class="trending-options">
+    <button onclick="loadTrending('bags')">Gifting Bags</button>
+    <button onclick="loadTrending('sarees')">Sarees & Suits</button>
+  </div>
+  <div class="product-grid" id="trending-grid"></div>
+</section>
 
-  <section id="cart" role="region">
-    <h2>Your Cart</h2>
-    <div id="cart-items"></div>
-    <div class="cart-total" id="cart-total"></div>
-  </section>
+<!-- Cart Modal (simplified) -->
+<div id="cart-modal" style="display:none; position:fixed; top:20%; right:20px; width:300px; background:white; padding:20px; border:1px solid #ccc; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,0.2); z-index:999;">
+  <h3>Your Cart</h3>
+  <div id="cart-items"></div>
+  <button onclick="toggleCart()">Close</button>
+</div>
 
-  <script>
-    // -- LOGIN LOGIC --
-    window.addEventListener("DOMContentLoaded", () => {
-      const userEl = document.querySelector(".user-details");
-      let name = localStorage.getItem("userName");
-      let email = localStorage.getItem("userEmail");
+<footer>
+  &copy; 2025 First Impression. All rights reserved.
+</footer>
 
-      if (!name || !email) {
-        name = prompt("Enter your name:") || "Guest";
-        email = prompt("Enter your email:") || "guest@example.com";
-        localStorage.setItem("userName", name);
-        localStorage.setItem("userEmail", email);
-      }
-      userEl.innerHTML = `${name} <span>${email}</span>`;
+<script>
+  const products = [
+    { id: 1, name: "Ribbon Handle Gift Bag", price: 350, img: "https://images.unsplash.com/photo-1585386959984-a41552262cdd" },
+    { id: 2, name: "Elegant Floral Gift Bag", price: 430, img: "https://i.pinimg.com/564x/94/6d/11/946d113897be678aad6af1520a9a2a53.jpg" },
+    { id: 3, name: "Classic Banarasi Saree", price: 2800, img: "https://images.unsplash.com/photo-1619531116777-7473c0d8429b" },
+    { id: 4, name: "Stylish Punjabi Suit", price: 2150, img: "https://images.unsplash.com/photo-1621410119935-d4e8ac6ef1c4" },
+    { id: 5, name: "Georgette Party Saree", price: 1950, img: "https://images.unsplash.com/photo-1603891688101-9f4e8e44b101" },
+  ];
+
+  const productGrid = document.getElementById("product-grid");
+  const trendingGrid = document.getElementById("trending-grid");
+
+  const cart = {};
+
+  function renderProducts(target, filter = null) {
+    target.innerHTML = "";
+    const filtered = filter ? products.filter(p => (filter === 'bags' ? p.price < 1000 : p.price >= 1000)) : products;
+    filtered.forEach(prod => {
+      const card = document.createElement("div");
+      card.className = "product-card";
+      card.innerHTML = `
+        <img src="${prod.img}" alt="${prod.name}" loading="lazy">
+        <div class="product-info">
+          <div class="product-name">${prod.name}</div>
+          <div class="product-price">₹${prod.price} INR</div>
+          <button class="add-to-cart" onclick="addToCart(${prod.id})">Add to Cart</button>
+        </div>`;
+      target.appendChild(card);
     });
+  }
 
-    // -- PRODUCT DATA --
-    const allProducts = [
-      {id:1, category:'gifting', name:'Elegant Floral Gift Bag', price:430, img:'https://i.pinimg.com/564x/94/6d/11/946d113897be678aad6af1520a9a2a53.jpg'},
-      {id:2, category:'gifting', name:'Brown Kraft Gift Bag', price:400, img:'https://i.pinimg.com/564x/40/70/b6/4070b63ac7a61cd84685a3f1e801bd65.jpg'},
-      {id:3, category:'gifting', name:'Ribbon Handle Gift Bag', price:350, img:'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=400&q=80'},
-      {id:4, category:'sarees', name:'Silk Saree — Maroon', price:2200, img:'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80'},
-      {id:5, category:'sarees', name:'Cotton Suit Set — Floral', price:1800, img:'https://images.unsplash.com/photo-1514516870923-aebcb3f8758a?auto=format&fit=crop&w=400&q=80'},
-      {id:6, category:'sarees', name:'Designer Anarkali Suit', price:2500, img:'https://images.unsplash.com/photo-1520975698513-b8a3719b7397?auto=format&fit=crop&w=400&q=80'}
-    ];
+  function showHome() {
+    document.getElementById("home-section").style.display = "block";
+    document.getElementById("trending-section").style.display = "none";
+  }
 
-    let cart = {}, currentFilter = '';
+  function showTrending() {
+    document.getElementById("home-section").style.display = "none";
+    document.getElementById("trending-section").style.display = "block";
+    loadTrending('bags');
+  }
 
-    const productListEl = document.getElementById('product-list');
-    const cartEl = document.getElementById('cart');
-    const cartItemsEl = document.getElementById('cart-items');
-    const cartTotalEl = document.getElementById('cart-total');
-    const submenu = document.getElementById('submenu-container');
+  function loadTrending(type) {
+    renderProducts(trendingGrid, type);
+  }
 
-    // -- RENDER PRODUCTS --
-    function renderProducts() {
-      productListEl.innerHTML = '';
-      if (!currentFilter) return;
-      allProducts.filter(p => p.category === currentFilter).forEach(prod => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-          <img src="${prod.img}" alt="${prod.name}">
-          <div class="product-info">
-            <div class="product-name">${prod.name}</div>
-            <div class="product-price">₹${prod.price} INR</div>
-            <button class="add-cart-btn">Add to Cart</button>
-          </div>`;
-        card.querySelector('.add-cart-btn').onclick = () => addToCart(prod.id);
-        productListEl.appendChild(card);
-      });
+  function addToCart(id) {
+    const prod = products.find(p => p.id === id);
+    if (cart[id]) {
+      cart[id].qty += 1;
+    } else {
+      cart[id] = { ...prod, qty: 1 };
     }
+    alert(`${prod.name} added to cart.`);
+  }
 
-    // -- ADD TO CART --
-    function addToCart(id) {
-      const prod = allProducts.find(p => p.id === id);
-      cart[id] ? cart[id].quantity++ : cart[id] = {...prod, quantity:1};
-      updateCartUI();
-      alert(`Added to cart: ${prod.name}`);
+  function toggleCart() {
+    const modal = document.getElementById("cart-modal");
+    if (modal.style.display === "none") {
+      updateCart();
+      modal.style.display = "block";
+    } else {
+      modal.style.display = "none";
     }
+  }
 
-    // -- UPDATE CART UI --
-    function updateCartUI() {
-      cartItemsEl.innerHTML = '';
-      const items = Object.values(cart);
-      if (!items.length) {
-        cartItemsEl.innerHTML = '<p class="empty-cart">Your cart is empty.</p>';
-        cartTotalEl.textContent = '';
-        return;
-      }
-      let total = 0;
-      items.forEach(item => {
-        total += item.price * item.quantity;
-        const div = document.createElement('div');
-        div.className = 'cart-item';
-        div.innerHTML = `<span>${item.name} × ${item.quantity}</span><span>₹${item.price*item.quantity}</span>`;
-        cartItemsEl.appendChild(div);
-      });
-      cartTotalEl.textContent = `Total: ₹${total} INR`;
+  function updateCart() {
+    const items = Object.values(cart);
+    const cartBox = document.getElementById("cart-items");
+    if (items.length === 0) {
+      cartBox.innerHTML = "<p>Your cart is empty.</p>";
+      return;
     }
+    cartBox.innerHTML = items.map(item => `
+      <div>
+        <strong>${item.name}</strong> x${item.qty} – ₹${item.price * item.qty}
+      </div>
+    `).join("");
+  }
 
-    // -- TRENDING & SUBMENU HANDLING --
-    document.getElementById('nav-trending').onclick = e => {
-      e.preventDefault();
-      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-      // if no category selected yet, default to gifting
-      if (!currentFilter) {
-        currentFilter = 'gifting';
-        renderProducts();
-      }
-    };
+  // Initial Load
+  renderProducts(productGrid);
+</script>
 
-    submenu.querySelectorAll('button').forEach(btn => {
-      btn.onclick = () => {
-        currentFilter = btn.dataset.category;
-        submenu.style.display = 'none';
-        renderProducts();
-      };
-    });
-
-    // -- CART TOGGLE --
-    document.getElementById('nav-cart').onclick = e => {
-      e.preventDefault();
-      cartEl.style.display = cartEl.style.display === 'block' ? 'none' : 'block';
-      if (cartEl.style.display === 'block') updateCartUI();
-    };
-
-    // -- CLOSE DROPDOWNS WHEN CLICKING OUTSIDE --
-    document.addEventListener('click', e => {
-      if (!submenu.contains(e.target) && e.target.id !== 'nav-trending') submenu.style.display = 'none';
-      if (!cartEl.contains(e.target) && e.target.id !== 'nav-cart') cartEl.style.display = 'none';
-    });
-  </script>
 </body>
 </html>
